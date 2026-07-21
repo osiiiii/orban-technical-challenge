@@ -2,8 +2,8 @@ My submission for the Orban Labs Backend Developer Tech Challenge
 
 ```
 /
-├── notes-app/        A notes application (built by hand by Daniel Osi)
-├── url-shortener-ai-assisted/    A URL shortener with click tracking (built with AI - Claude Opus 4.8)
+├── project-a-manual/        A notes application (built by hand by Daniel Osi)
+├── project-b-ai-assisted/    A URL shortener with click tracking (built with AI - Claude Opus 4.8)
 ├── resume.pdf
 └── README.md         
 ```
@@ -13,13 +13,13 @@ My submission for the Orban Labs Backend Developer Tech Challenge
 A full-stack URL shortener: paste a long URL, get a short code, and track how
 many times each link is clicked. (built with AI - Claude Opus 4.8)
 
-Setup and API reference: [`url-shortener-ai-assisted/README.md`](url-shortener-ai-assisted/README.md).
+Setup and API reference: [`project-b-ai-assisted/README.md`](project-b-ai-assisted/README.md).
 
 ## notes-app
 
 A notes application  (built by hand by Daniel Osi).
 
-Setup: [`notes-app/README.md`](notes-app/README.md).
+Setup: [`project-a-manual/README.md`](project-a-manual/README.md).
 
 ## A note on approach across both
 
@@ -27,7 +27,7 @@ notes-app (built by hand)
 
 A notes API with a Next frontend built on FastAPI + SQLite on :8000, Next on :3000 that just calls it. Full CRUD plus search (keyword hits title/body, tag match is exact) behind one shared API key; /health is open,everything under /notes needs the key...tags are a JSON array right on the note row instead of a join table: keyword search runs in SQL. The tag filter runs in Python after ,totally fine at this size, and normalizing tags into their own table is the one thing I'd change if it ever got big.Kept it deliberately boring, like the brief asked (twice): no accounts, no migrations (tables build on startup), no pagination, none of it needed here. Schemas are split into create/update/out so clients can't set an id or timestamp, errors are all one flat {detail} string, and the API key never touches the browser. The frontend calls a server-side proxy that adds it. Tests cover the stuff that actually breaks: auth, blank title, a full CRUD run, and search, each on a fresh in-memory db.Something worth knowing: /notes/search has to be declared before /notes/{id} or FastAPI swallows it as an id.
 
-Setup: notes-app/README.md.
+Setup: project-a-manual/README.md.
 
 url-shortener (bult with AI including this note)
 
@@ -51,7 +51,7 @@ Tested. 11 backend tests over an in-memory SQLite database cover auth, the full 
 
 Frontend. A single page with three cards — API key, shorten form, and a dashboard listing links with live click counts. Every async action has explicit idle / loading / error / empty states, the key is stored only in the browser, and a security advisory on the initially pinned Next.js version was caught and patched during the build.
 
-Every decision, its alternatives, and its tradeoffs are written up in url-shortener-ai-assisted/docs/planning.md; the API reference is in url-shortener-ai-assisted/docs/API.md; how AI was used is in url-shortener-ai-assisted/docs/ai-usage.md with the prompts and session log in url-shortener-ai-assisted/prompts/. Setup: url-shortener-ai-assisted/README.md.
+Every decision, its alternatives, and its tradeoffs are written up in project-b-ai-assisted/docs/planning.md; the API reference is in project-b-ai-assisted/docs/API.md; how AI was used is in project-b-ai-assisted/docs/ai-usage.md with the prompts and session log in project-b-ai-assisted/prompts/. Setup: project-b-ai-assisted/README.md.
 
 
 A note on approach across both
