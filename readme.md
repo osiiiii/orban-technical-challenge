@@ -3,7 +3,7 @@ My submission for the Orban Labs Backend Developer Tech Challenge
 ```
 /
 ├── notes-app/        A notes application (built by hand by Daniel Osi)
-├── url-shortener/    A URL shortener with click tracking (built with AI - Claude Opus 4.8)
+├── url-shortener-ai-assisted/    A URL shortener with click tracking (built with AI - Claude Opus 4.8)
 ├── resume.pdf
 └── README.md         
 ```
@@ -13,7 +13,7 @@ My submission for the Orban Labs Backend Developer Tech Challenge
 A full-stack URL shortener: paste a long URL, get a short code, and track how
 many times each link is clicked. (built with AI - Claude Opus 4.8)
 
-Setup and API reference: [`url-shortener/README.md`](url-shortener/README.md).
+Setup and API reference: [`url-shortener-ai-assisted/README.md`](url-shortener-ai-assisted/README.md).
 
 ## notes-app
 
@@ -51,7 +51,7 @@ Tested. 11 backend tests over an in-memory SQLite database cover auth, the full 
 
 Frontend. A single page with three cards — API key, shorten form, and a dashboard listing links with live click counts. Every async action has explicit idle / loading / error / empty states, the key is stored only in the browser, and a security advisory on the initially pinned Next.js version was caught and patched during the build.
 
-Every decision, its alternatives, and its tradeoffs are written up in url-shortener/docs/planning.md; the API reference is in url-shortener/docs/API.md; how AI was used is in url-shortener/docs/ai-usage.md with the prompts and session log in url-shortener/prompts/. Setup: url-shortener/README.md.
+Every decision, its alternatives, and its tradeoffs are written up in url-shortener-ai-assisted/docs/planning.md; the API reference is in url-shortener-ai-assisted/docs/API.md; how AI was used is in url-shortener-ai-assisted/docs/ai-usage.md with the prompts and session log in url-shortener-ai-assisted/prompts/. Setup: url-shortener-ai-assisted/README.md.
 
 
 A note on approach across both
