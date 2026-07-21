@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.db
+
+# Env files (never commit real secrets)
+.env
+.env.local
+
+# Node / Next
+node_modules/
+.next/
+next-env.d.ts
+
+# OS / editor
+.DS_Store
+.idea/
